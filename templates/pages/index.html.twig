@@ -1,0 +1,556 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chat, Meet Online!{% endblock %}
+
+{% block metas %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex,nofollow" />
+{% endblock %}
+
+{% block stylesheets %}
+    <!-- Homepage -->
+    <link href="{{ asset('build/css/normalize.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/style.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+{% endblock %}
+
+{% block bodyclass %}class="home-page" {% endblock %}
+
+{% block body %}
+
+    <aside class="navigation">
+        <div class="navigation__header">
+            <div class="navigation__logo">
+                <a href="/">
+                    <img src="{{ asset('build/images/logo.png') }}" alt="logo">
+                </a>
+            </div>
+            <div class="navigation__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <nav class="navigation__block">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">INFORMATION</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Buying tickets</a>
+                    </li>
+                    <li>
+                        <a href="#">Payment</a>
+                    </li>
+                    <li>
+                        <a href="#">Payment</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">PRIVACY POLICY</a>
+            </li>
+            <li>
+                <a href="#">REFUND AND CREDIT</a>
+            </li>
+            <li>
+                <a href="#">SPEED DATING SESSIONS</a>
+            </li>
+            <li>
+                <a href="#">DOWNLOAD APP</a>
+            </li>
+            <li>
+                <a href="#">CONTACT US</a>
+            </li>
+        </nav>
+        <div class="navigation__footer">
+            <div class="socials">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+            </div>
+            <!-- <div class="mobile-info">
+                <span class="btn-login">Login</span> | <span class="btn-create">Register</span>
+            </div> -->
+            Date Assured © Online Speed Dating | All Rights Reserved
+        </div>
+    </aside>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ asset('build/images/logo.png') }}" alt="logo">
+                    </a>
+                </div>
+                {{ include('pages/_header_nav.html.twig') }}
+            </div>
+        </header>
+
+        <main>
+            <section class="banner">
+                <div class="container">
+                    <div class="banner__title title-1">
+                        Date Assured
+                    </div>
+                    <div class="banner__subtitle">
+                        Online Speed Dating
+                    </div>
+                </div>
+            </section>
+
+            <section class="info">
+                <div class="container">
+                    <div class="info__header decor">
+                        <div class="info__title title-2">
+                            Chat, Meet Online!
+                        </div>
+                        <div class="info__subtitle text-desc">
+                            Comfortable, safe, at any time
+                        </div>
+                        <div class="info__detail">
+                            <span>Your Location:</span> Australia, Sydney | <span>Your IP:</span> 74.125.195.105
+                        </div>
+                    </div>
+                    <div class="info__body">
+                        <div class="info-table">
+                            <div class="info-table__title">
+                                Total users in the country
+                            </div>
+                            <div class="info-table__content">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>Sydney</td>
+                                        <td>32833</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Melbourne</td>
+                                        <td>28956</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brisbane</td>
+                                        <td>24875</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perth</td>
+                                        <td>24566</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adelaide</td>
+                                        <td>22451</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gold Coast</td>
+                                        <td>21788</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Newcastle</td>
+                                        <td>29345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Canberra</td>
+                                        <td>29345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunshine Coast</td>
+                                        <td>18309</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wollongong</td>
+                                        <td>17659</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <button class="info-table__btn btn btn--dark btn--small">View More</button>
+                            </div>
+                        </div>
+                        <div class="info-table">
+                            <div class="info-table__title">
+                                Users onlain
+                            </div>
+                            <div class="info-table__content">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>Sydney</td>
+                                        <td>3831</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Melbourne</td>
+                                        <td>1952</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brisbane</td>
+                                        <td>2872</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perth</td>
+                                        <td>566</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adelaide</td>
+                                        <td>451</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gold Coast</td>
+                                        <td>288</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Newcastle</td>
+                                        <td>345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Canberra</td>
+                                        <td>1204</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunshine Coast</td>
+                                        <td>309</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wollongong</td>
+                                        <td>59</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <button class="info-table__btn btn btn--dark btn--small">View More</button>
+                            </div>
+                        </div>
+                        <div class="info__banner">
+                            <div class="info__banner-title">
+                                Next Online Speed Dating Session in:
+                            </div>
+                            <div class="info__banner-subtitle">
+                                Australia, Sydney<br>
+                                begins in:
+                                <span>20 minutes</span>
+                            </div>
+                            <button class="info__banner-btn btn btn--light btn--small">
+                                Have Part
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reason">
+                <div class="container">
+                    <div class="reason__header decor">
+                        <div class="reason__title title-2">
+                            Not sure if you need this?
+                        </div>
+                        <div class="reason__subtitle text-desc">
+                            Everyone who is looking for communication, friendship, feelings meets here
+                        </div>
+                    </div>
+                    <div class="reason__block">
+                        <div class="reason-card">
+                            <div class="reason-card__img col">
+                                <img src="{{ asset('build/images/img1.jpg') }}" alt="img1">
+                            </div>
+                            <div class="reason-card__text col">
+                                <div class="reason-card__title title-3">
+                                    What is dateassured.com?
+                                </div>
+                                <div class="reason-card__desc text">
+                                    <p>
+                                        Unlike online dating websites and apps dateassured.com guarantees You will have
+                                        a
+                                        video conversation with a real local
+                                        person tonight or on any other day.
+                                    </p>
+                                    <p>
+                                        Unlike online dating websites and apps dateassured.com guarantees You will have
+                                        a
+                                        video conversation with a real local
+                                        person tonight or on any other day.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-card__img col">
+                                <img src="{{ asset('build/images/img2.jpg') }}" alt="img1">
+                            </div>
+                            <div class="reason-card__text col">
+                                <div class="reason-card__title title-3">
+                                    Advantages of dateasured.com?
+                                </div>
+                                <div class="reason-card__desc text">
+                                    <ul>
+                                        <li>All members are local;</li>
+                                        <li>No fake accounts - only real people;</li>
+                                        <li>Safe and secure environment;</li>
+                                        <li>Speed dating from a comfort of your home;</li>
+                                        <li>Video chat with as many people as you want;</li>
+                                        <li>No waiting lists, no frustrating nights</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-card__img col">
+                                <img src="{{ asset('build/images/img3.jpg') }}" alt="img1">
+                            </div>
+                            <div class="reason-card__text col">
+                                <div class="reason-card__title title-3">
+                                    Why join dateassured.com?
+                                </div>
+                                <div class="reason-card__desc text">
+                                    <ul>
+                                        <li>Realistic membership costs, no hidden fees or charges;</li>
+                                        <li>Same day online sessions or book your preferred date and time;</li>
+                                        <li>Guaranteed online video conversations with real people on any day of the
+                                            week;
+                                        </li>
+                                        <li>Choose who you like most and continue your acquaintanceship on a real date;
+                                        </li>
+                                        <li>Convenience of both, app on your mobile device or a web version on your
+                                            laptop /
+                                            pc;</li>
+                                        <li>Secure online environment and 24hr online support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video">
+                <div class="container">
+                    <div class="video__block">
+                        <iframe src="https://player.vimeo.com/video/147339136" width="800" height="440" frameborder="0"
+                                allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+                    </div>
+                    <button class="video__btn btn btn--dark">
+                        Register on the site right now!
+                    </button>
+                </div>
+            </section>
+
+            <section class="reviews">
+                <div class="container">
+                    <div class="reviews__title title-2">
+                        Our members say
+                    </div>
+                    <div class="reviews__slider">
+                        <div class="reviews__slide">
+                            <div class="reviews-card">
+                                <div class="reviews-card__text text">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's standard
+                                    dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled it to make a type specimen
+                                    book.
+                                </div>
+                                <div class="reviews-card__author">
+                                    JOHN K. RILEY
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__slide">
+                            <div class="reviews-card">
+                                <div class="reviews-card__text text">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have
+                                    suffered alteration in some form,
+                                    by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <div class="reviews-card__author">
+                                    JOHN A. ADAMS
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__slide">
+                            <div class="reviews-card">
+                                <div class="reviews-card__text text">
+                                    The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                                    or
+                                    non-characteristic words etc.
+                                </div>
+                                <div class="reviews-card__author">
+                                    JANE LARIKEN
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__slide">
+                            <div class="reviews-card">
+                                <div class="reviews-card__text text">
+                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                                    default model text, and a search for
+                                    'lorem ipsum' will uncover many web sites still in their infancy..
+                                </div>
+                                <div class="reviews-card__author">
+                                    JACK TROMSO
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="news">
+                <div class="container">
+                    <div class="news__title title-2 decor">
+                        Our news
+                    </div>
+                    <div class="news__block">
+                        <div class="news-card">
+                            <div class="news-card__img">
+                                <img src="{{ asset('build/images/news1.jpg') }}" alt="news1">
+                            </div>
+                            <div class="news-card__label">
+                                <a href="#" class="news-card__title">
+                                    #02 Ny Inspiration
+                                </a>
+                                <div class="news-card__info">
+                                    17 Dec 2014 - <a href="#">By Joshua</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="news-card__img">
+                                <img src="{{ asset('build/images/news2.jpg') }}" alt="news2">
+                            </div>
+                            <div class="news-card__label">
+                                <a href="#" class="news-card__title">
+                                    #02 Ny Inspiration
+                                </a>
+                                <div class="news-card__info">
+                                    17 Dec 2014 - <a href="#">By Joshua</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="news-card__img">
+                                <img src="{{ asset('build/images/news3.jpg') }}" alt="news3">
+                            </div>
+                            <div class="news-card__label">
+                                <a href="#" class="news-card__title">
+                                    #02 Ny Inspiration
+                                </a>
+                                <div class="news-card__info">
+                                    17 Dec 2014 - <a href="#">By Joshua</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__copyright">
+                Date Assured © Online Speed Dating | All Rights Reserved
+            </div>
+            <div class="footer__socials">
+                <a href="#">FACEBOOK</a> /
+                <a href="#">TWITTER</a> /
+                <a href="#">PINTEREST</a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .t-red {
+            color: darkred;
+        }
+    </style>
+
+    <div class="popup popup-login" id="popup-login">
+        <div class="popup__box popup-body">
+            <div class="popup__close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="popup-form">
+                <form method="post" id="ajax_auth_form" action="">
+                    <div class="popup-form__title title-3">
+                        Log-in to your account
+                    </div>
+                    <div class="popup-form__body">
+                        <div class="form-group">
+                            <small id="loginHelpInline" class="text-muted t-red"></small>
+                            <input id="login" type="text" placeholder="E-mail address" aria-describedby="loginHelpInline">
+                        </div>
+                        <div class="form-group">
+                            <input id="pass" type="password" placeholder="Password">
+                            <input type="hidden" id="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        </div>
+                        <button id="auth_submit" class="btn btn--dark">Login</button>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .regform-success {
+            display: block;
+            padding: 25px 0 50px 0;
+            text-align: center;
+            font-size: 150%;
+            color: #e9967a;
+        }
+    </style>
+    <div class="popup popup-create" id="popup-create">
+        <div class="popup__box popup-body">
+            <div class="popup__close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="popup-form">
+                <form method="post" id="ajax_reg_form" action="">
+                    <div class="popup-form__title title-3" id="aaaa">
+                        Create account
+                    </div>
+                    <div class="popup-form__body" id="regform-body">
+                        <div class="form-group">
+                            <small id="usernameHelpInline" class="text-muted t-red"></small>
+                            <input id="username" type="text" placeholder="Your name" aria-describedby="usernameHelpInline">
+                        </div>
+                        <div class="form-group">
+                            <small id="emailHelpInline" class="text-muted t-red"></small>
+                            <input id="email" type="text" placeholder="Your Email" aria-describedby="emailHelpInline">
+                        </div>
+                        <div class="form-group">
+                            <small id="passwordHelpInline" class="text-muted t-red"></small>
+                            <input id="password" type="password" placeholder="Password" aria-describedby="passwordHelpInline">
+                        </div>
+                        <div class="form-group">
+                            <small id="password2HelpInline" class="text-muted t-red"></small>
+                            <input id="password2" type="password" placeholder="Repeat your password" aria-describedby="password2HelpInline">
+                        </div>
+                        <button id="reg_submit" class="btn btn--dark">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ asset('build/js/myajax.js') }}"></script>
+    <script src="{{ asset('build/js/slick.min.js') }}"></script>
+    <script src="{{ asset('build/js/script.js') }}"></script>
+
+{% endblock %}

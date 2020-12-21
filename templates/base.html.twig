@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block metas %}
+            <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+            <meta name="description" content="{% block description %}{% endblock %}" />
+            <meta name="revisit" content="4 days" />
+            <meta name="copyright" content="Topsite Lab." />
+            <meta name="author" content="Topsite Lab." />
+            <meta name="robots" content="noindex,nofollow" />
+        {% endblock %}
+    </head>
+    <body {% block bodyclass %}class="" {% endblock %}>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your Account{% endblock %}
+
+{% block metas %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex,nofollow" />
+{% endblock %}
+
+{% block stylesheets %}
+    <!-- Homepage -->
+    <link href="{{ asset('build/css/normalize.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/style.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+{% endblock %}
+
+{% block bodyclass %}class="home-page" {% endblock %}
+
+{% block body %}
+
+    <aside class="navigation">
+        <div class="navigation__header">
+            <div class="navigation__logo">
+                <a href="/">
+                    <img src="{{ asset('build/images/logo.png') }}" alt="logo">
+                </a>
+            </div>
+            <div class="navigation__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <nav class="navigation__block">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="#">INFORMATION</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Buying tickets</a>
+                    </li>
+                    <li>
+                        <a href="#">Payment</a>
+                    </li>
+                    <li>
+                        <a href="#">Payment</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">PRIVACY POLICY</a>
+            </li>
+            <li>
+                <a href="#">REFUND AND CREDIT</a>
+            </li>
+            <li>
+                <a href="#">SPEED DATING SESSIONS</a>
+            </li>
+            <li>
+                <a href="#">DOWNLOAD APP</a>
+            </li>
+            <li>
+                <a href="#">CONTACT US</a>
+            </li>
+        </nav>
+        <div class="navigation__footer">
+            <div class="socials">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+            </div>
+            Date Assured © Online Speed Dating | All Rights Reserved
+        </div>
+    </aside>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ asset('build/images/logo.png') }}" alt="logo">
+                    </a>
+                </div>
+                {{ include('pages/_header_nav.html.twig') }}
+            </div>
+        </header>
+
+        <main>
+            <section class="profile">
+                <div class="container">
+                    <div class="profile__col">
+                        <div class="profile__photo">
+                            <a href="#">
+                                <img src="{{ asset('build/images/chris.png') }}" alt="chris">
+                            </a>
+                        </div>
+                        <div class="profile-title">
+                            {{ username }}
+                        </div>
+                    </div>
+                    <div class="profile__col">
+                        <div class="profile-title">
+                            Today is
+                        </div>
+                        <div class="profile__detail">
+                            25 November 2020
+                        </div>
+                        <div class="profile__detail">
+                            22:45
+                        </div>
+                    </div>
+                    <div class="profile__col">
+                        <div class="profile-title">
+                            Location
+                        </div>
+                        <div class="profile__detail">
+                            Sydney
+                        </div>
+                        <div class="profile__detail">
+                            Australia
+                        </div>
+                    </div>
+                    <div class="profile__col">
+                        <div class="profile-title">
+                            Ballance
+                        </div>
+                        <div class="profile__detail">
+                            41.24$
+                        </div>
+                        <button class="profile__btn btn btn--dark">
+                            Top Up Ballance
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="session">
+                <div class="container">
+                    <div class="session__header decor">
+                        <div class="session__title title-2">
+                            Welcome {{ username }}!
+                        </div>
+                        <div class="session__subtitle text-desc">
+                            Today's Online Speed Dating Sessions
+                        </div>
+                    </div>
+                    <div class="session__block">
+                        <div class="session-sidebar">
+                            <div class="session-sidebar__title">
+                                User's Menu
+                            </div>
+                            <nav class="session-sidebar__nav">
+                                <li>
+                                    <a href="#">Speed Dating Sessions</a>
+                                </li>
+                                <li>
+                                    <a href="#">Top Up Ballance</a>
+                                </li>
+                                <li>
+                                    <a href="#">Messages</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help/Support</a>
+                                </li>
+                                <li class="active">
+                                    <a href="/user/profile">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#">Speed Dating Tips</a>
+                                </li>
+                            </nav>
+                        </div>
+                        <div class="session-body">
+                            <div class="session-body__title decor">
+                                My Profile Data Edit
+                            </div>
+                            <div class="session-body__box">
+                                <style>
+                                    .profile-form {
+                                        padding-top: 20px;
+                                    }
+                                    .form-group {
+                                        padding-bottom: 20px;
+                                    }
+                                    .form-group label {
+                                        padding-right: 10px;
+                                    }
+                                    .form-group button {
+                                        margin-left: 30%;
+                                        cursor: pointer;
+                                    }
+                                    .profile-success {
+                                        display: block;
+                                        padding-bottom: 20px;
+                                        color: #e9967a;
+                                    }
+                                </style>
+                                <div class="profile-form">
+                                    <div class="profile-success">{{ form_success }}</div>
+                                    {{ form(user_form) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__copyright">
+                Date Assured © Online Speed Dating | All Rights Reserved
+            </div>
+            <div class="footer__socials">
+                <a href="#">FACEBOOK</a> /
+                <a href="#">TWITTER</a> /
+                <a href="#">PINTEREST</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ asset('build/js/slick.min.js') }}"></script>
+    <script src="{{ asset('build/js/script.js') }}"></script>
+
+{% endblock %}

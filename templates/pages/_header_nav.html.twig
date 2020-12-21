@@ -1,0 +1,12 @@
+<div class="header__nav">
+    {% if is_granted('ROLE_USER') %}
+        <button class="btn btn-text btn--light" onclick="document.location.href = '/user/account';">My Account/Profile</button>
+        <button class="btn btn-text btn--light" onclick="document.location.href = '/logout';">Exit</button>
+    {% else %}
+        <button class="btn btn-text btn--light btn-login">Login</button>
+        <button class="btn btn-text btn--light btn-create">Register</button>
+    {% endif %}
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+</div>

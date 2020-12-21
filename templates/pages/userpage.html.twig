@@ -1,0 +1,449 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your Account{% endblock %}
+
+{% block metas %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex,nofollow" />
+{% endblock %}
+
+{% block stylesheets %}
+    <!-- Homepage -->
+    <link href="{{ asset('build/css/normalize.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/style.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+{% endblock %}
+
+{% block bodyclass %}class="home-page" {% endblock %}
+
+{% block body %}
+
+    <aside class="navigation">
+        <div class="navigation__header">
+            <div class="navigation__logo">
+                <a href="/">
+                    <img src="{{ asset('build/images/logo.png') }}" alt="logo">
+                </a>
+            </div>
+            <div class="navigation__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <nav class="navigation__block">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="#">INFORMATION</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Buying tickets</a>
+                    </li>
+                    <li>
+                        <a href="#">Payment</a>
+                    </li>
+                    <li>
+                        <a href="#">Payment</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">PRIVACY POLICY</a>
+            </li>
+            <li>
+                <a href="#">REFUND AND CREDIT</a>
+            </li>
+            <li>
+                <a href="#">SPEED DATING SESSIONS</a>
+            </li>
+            <li>
+                <a href="#">DOWNLOAD APP</a>
+            </li>
+            <li>
+                <a href="#">CONTACT US</a>
+            </li>
+        </nav>
+        <div class="navigation__footer">
+            <div class="socials">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+            </div>
+            Date Assured © Online Speed Dating | All Rights Reserved
+        </div>
+    </aside>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ asset('build/images/logo.png') }}" alt="logo">
+                    </a>
+                </div>
+                {{ include('pages/_header_nav.html.twig') }}
+            </div>
+        </header>
+
+        <main>
+            <section class="profile">
+                <div class="container">
+                    <div class="profile__col">
+                        <div class="profile__photo">
+                            <a href="#">
+                                <img src="{{ asset('build/images/chris.png') }}" alt="chris">
+                            </a>
+                        </div>
+                        <div class="profile-title">
+                            {{ username }}
+                        </div>
+                    </div>
+                    <div class="profile__col">
+                        <div class="profile-title">
+                            Today is
+                        </div>
+                        <div class="profile__detail">
+                            25 November 2020
+                        </div>
+                        <div class="profile__detail">
+                            22:45
+                        </div>
+                    </div>
+                    <div class="profile__col">
+                        <div class="profile-title">
+                            Location
+                        </div>
+                        <div class="profile__detail">
+                            Sydney
+                        </div>
+                        <div class="profile__detail">
+                            Australia
+                        </div>
+                    </div>
+                    <div class="profile__col">
+                        <div class="profile-title">
+                            Ballance
+                        </div>
+                        <div class="profile__detail">
+                            41.24$
+                        </div>
+                        <button class="profile__btn btn btn--dark">
+                            Top Up Ballance
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="session">
+                <div class="container">
+                    <div class="session__header decor">
+                        <div class="session__title title-2">
+                            Welcome {{ username }}!
+                        </div>
+                        <div class="session__subtitle text-desc">
+                            Today's Online Speed Dating Sessions
+                        </div>
+                    </div>
+                    <div class="session__block">
+                        <div class="session-sidebar">
+                            <div class="session-sidebar__title">
+                                User's Menu
+                            </div>
+                            <nav class="session-sidebar__nav">
+                                <li>
+                                    <a href="#">Speed Dating Sessions</a>
+                                </li>
+                                <li>
+                                    <a href="#">Top Up Ballance</a>
+                                </li>
+                                <li>
+                                    <a href="#">Messages</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help/Support</a>
+                                </li>
+                                <li>
+                                    <a href="/user/profile">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#">Speed Dating Tips</a>
+                                </li>
+                            </nav>
+                        </div>
+                        <div class="session-body">
+                            <div class="session-body__title decor">
+                                Marriage And Family
+                            </div>
+                            <div class="session-body__box">
+                                <div class="session-body__col">
+                                    <div class="session-body__subtitle">
+                                        Premium Speed Dating Sessions, 19.99$
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn session-body__btn btn-other">
+                                            Age 26-34, 8 p.m.-9 p.m. - 3m/6f
+                                        </button>
+                                        <button class="btn session-body__btn">
+                                            Age 28-36, 8 p.m.-9 p.m. - 8m/7f
+                                        </button>
+                                        <button class="btn session-body__btn">
+                                            Age 30-38, 8 p.m.-9 p.m. - 5m/7f
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="session-body__col">
+                                    <div class="session-body__subtitle">
+                                        Blind Speed Dating Sessions, <br>4.99$
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn session-body__btn">
+                                            Age 26-34, 8 p.m.-9 p.m. - 8m/7f
+                                        </button>
+                                        <button class="btn session-body__btn">
+                                            Age 28-36, 8 p.m.-9 p.m. - 4m/5f
+                                        </button>
+                                        <button class="btn session-body__btn">
+                                            Age 30-38, 8 p.m.-9 p.m. - 8m/9f
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gender">
+                <div class="container">
+                    <div class="gender__block">
+                        <div class="gender__title">
+                            Men
+                        </div>
+                        <div class="gender__row">
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-man.png') }}" alt="man">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gender__block">
+                        <div class="gender__title">
+                            Female
+                        </div>
+                        <div class="gender__row">
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-woman.png') }}" alt="man">
+                            </a>
+                            <a href="#">
+                                <img src="{{ asset('build/images/ava-without-woman.png') }}" alt="man">
+                            </a>
+                        </div>
+                    </div>
+                    <button class="gender__btn btn btn--dark">
+                        I Want To Take Part Right Now!
+                    </button>
+                </div>
+            </section>
+
+            <section class="sked">
+                <div class="container">
+                    <div class="sked__col">
+                        <div class="sked__title">
+                            December, 2020
+                        </div>
+                        <div class="sked__table">
+                            <table border="1">
+                                <thead>
+                                <tr>
+                                    <th scope="col">MON</th>
+                                    <th scope="col">TUE</th>
+                                    <th scope="col">WED</th>
+                                    <th scope="col">THU</th>
+                                    <th scope="col">FRI</th>
+                                    <th scope="col">SAT</th>
+                                    <th scope="col">SUN</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>18</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td class="current">22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>28</td>
+                                    <td>29</td>
+                                    <td>30</td>
+                                    <td>31</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="sked__col">
+                        <div class="sked__title">
+                            Available Sessions
+                        </div>
+                        <div class="sked__table sked__table--other">
+                            <table border="1">
+                                <tbody>
+                                <tr>
+                                    <td>12:00 a.m</td>
+                                    <td>1:00 a.m</td>
+                                    <td>2:00 a.m</td>
+                                    <td>3:00 a.m</td>
+                                </tr>
+                                <tr>
+                                    <td>4:00 a.m</td>
+                                    <td>5:00 a.m</td>
+                                    <td>6:00 a.m</td>
+                                    <td>7:00 a.m</td>
+                                </tr>
+                                <tr>
+                                    <td>8:00 a.m</td>
+                                    <td>9:00 a.m</td>
+                                    <td>10:00 a.m</td>
+                                    <td>11:00 a.m</td>
+                                </tr>
+                                <tr>
+                                    <td>12:00 p.m</td>
+                                    <td>1:00 p.m</td>
+                                    <td>2:00 p.m</td>
+                                    <td>3:00 p.m</td>
+                                </tr>
+                                <tr>
+                                    <td>4:00 p.m</td>
+                                    <td>5:00 p.m</td>
+                                    <td>6:00 p.m</td>
+                                    <td>7:00 p.m</td>
+                                </tr>
+                                <tr>
+                                    <td>8:00 p.m</td>
+                                    <td>9:00 p.m</td>
+                                    <td>10:00 p.m</td>
+                                    <td>11:00 p.m</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__copyright">
+                Date Assured © Online Speed Dating | All Rights Reserved
+            </div>
+            <div class="footer__socials">
+                <a href="#">FACEBOOK</a> /
+                <a href="#">TWITTER</a> /
+                <a href="#">PINTEREST</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ asset('build/js/slick.min.js') }}"></script>
+    <script src="{{ asset('build/js/script.js') }}"></script>
+
+{% endblock %}
