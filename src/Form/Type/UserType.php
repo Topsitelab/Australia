@@ -7,8 +7,8 @@ use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserType extends AbstractType
 {
@@ -25,7 +25,7 @@ class UserType extends AbstractType
         }
 
         $builder
-            ->add('account', TextType::class)
+            ->add('username', TextType::class)
             ->add('country', CountryType::class)
             ->add('city', TextType::class)
             ->add('gender', ChoiceType::class, [
@@ -93,6 +93,12 @@ class UserType extends AbstractType
                     'Casual fun, no strings attached' => 'Casual fun, no strings attached',
                     'Friendship, entirely platonic' => 'Friendship, entirely platonic',
                 ],
+            ])
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Your avatar',
+                'required' => false,
+                'download_link' => false,
+                'allow_delete'  => false,
             ])
             ->add('save', SubmitType::class)
         ;

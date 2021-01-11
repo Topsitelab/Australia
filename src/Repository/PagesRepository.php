@@ -19,6 +19,19 @@ class PagesRepository extends ServiceEntityRepository
         parent::__construct($registry, Pages::class);
     }
 
+
+    public function findBySlug($slug): ?Pages
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.slug = :val')
+            ->setParameter('val', $slug)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
+
+
     // /**
     //  * @return Pages[] Returns an array of Pages objects
     //  */

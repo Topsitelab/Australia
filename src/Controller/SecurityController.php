@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Entity\User;
+use App\Entity\Profile;
 
 class SecurityController extends AbstractController
 {
@@ -79,47 +80,52 @@ class SecurityController extends AbstractController
             $email = trim($request->request->get('email'));
             $password = trim($request->request->get('password'));
             $password2 = trim($request->request->get('password2'));
+
             // Errors check
             $error_username = $error_email = $error_password = $error_password2 = '';
             if ($username == '') $error_username = 'Enter your name';
             if ($email == '') $error_email = 'Enter your email';
             if ($password == '') $error_password = 'Enter password';
             if ($password2 != $password) $error_password2 = 'Passwords must match';
+
             // Success
             if ($error_username == '' and $error_email == '' and $error_password == '' and $error_password2 == '') {
+
                 // Insert new user in DB
                 $entityManager = $this->getDoctrine()->getManager();
                 $user = new User();
-
                 $role = ["ROLE_USER"];
-                //$role = ["ROLE_ADMIN"];
                 $encoded = $encoder->encodePassword($user, $password);
-
-                $user->setAccount($username);
                 $user->setEmail($email);
                 $user->setPassword($encoded);
                 $user->setRoles($role);
                 $user->setCreatedAt(new \DateTime());
-
-                $byDefaultString = '';
-                $byDefaultNum = 0;
-                $user->setCountry($byDefaultString);
-                $user->setCity($byDefaultString);
-                $user->setGender($byDefaultString);
-                $user->setAge(18);
-                $user->setHeight(155);
-                $user->setBodytype($byDefaultString);
-                $user->setEthnicity($byDefaultString);
-                $user->setPhone($byDefaultString);
-                $user->setEmployment($byDefaultString);
-                $user->setSexuality($byDefaultString);
-                $user->setPrefer($byDefaultString);
-                $user->setPurpose($byDefaultString);
-                $user->setBalance($byDefaultNum);
-                $user->setStatus('active');
-                $user->setVip('free');
-
                 $entityManager->persist($user);
+
+                // Insert new user profile data in DB
+                $profile = new Profile();
+                $defaultString = '';
+                $profile->setUsername($username);
+                $profile->setEmail($email); // key
+                $profile->setCountry($defaultString);
+                $profile->setCity($defaultString);
+                $profile->setGender($defaultString);
+                $profile->setAge(18);
+                $profile->setHeight(150);
+                $profile->setBodytype($defaultString);
+                $profile->setEthnicity($defaultString);
+                $profile->setPhone($defaultString);
+                $profile->setEmployment($defaultString);
+                $profile->setSexuality($defaultString);
+                $profile->setPrefer($defaultString);
+                $profile->setPurpose($defaultString);
+                $profile->setBalance(0);
+                $profile->setStatus('active');
+                $profile->setVip('free');
+                $profile->setImageName($defaultString);
+                $profile->setImageSize(0);
+                $profile->setUpdatedAt(new \DateTime());
+                $entityManager->persist($profile);
 
                 $entityManager->flush();
 

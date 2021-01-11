@@ -71,7 +71,8 @@ class Pages
 
     public function setBody(string $body): self
     {
-        $this->body = $body;
+        $this->body = ($body === null) ? '' : $body;
+        //$this->body = $body;
 
         return $this;
     }
@@ -93,9 +94,10 @@ class Pages
         return $this->metatitle;
     }
 
-    public function setMetatitle(string $metatitle): self
+    public function setMetatitle($metatitle): self
     {
-        $this->metatitle = $metatitle;
+        $this->metatitle = ($metatitle === null) ? '' : $metatitle;
+        //$this->metatitle = $metatitle;
 
         return $this;
     }
@@ -105,9 +107,10 @@ class Pages
         return $this->keywords;
     }
 
-    public function setKeywords(string $keywords): self
+    public function setKeywords($keywords): self
     {
-        $this->keywords = $keywords;
+        $this->keywords = ($keywords === null) ? '' : $keywords;
+        //$this->keywords = $keywords;
 
         return $this;
     }
@@ -117,9 +120,10 @@ class Pages
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription($description): self
     {
-        $this->description = $description;
+        $this->description = ($description === null) ? '' : $description;
+        //$this->description = $description;
 
         return $this;
     }

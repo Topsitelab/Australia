@@ -124,7 +124,7 @@
                             Comfortable, safe, at any time
                         </div>
                         <div class="info__detail">
-                            <span>Your Location:</span> Australia, Sydney | <span>Your IP:</span> 74.125.195.105
+                            <span>Your Location:</span> {{ country }}, {{ city }} | <span>Your IP:</span> {{ ip }}
                         </div>
                     </div>
                     <div class="info__body">
@@ -182,7 +182,7 @@
                         </div>
                         <div class="info-table">
                             <div class="info-table__title">
-                                Users onlain
+                                Users online
                             </div>
                             <div class="info-table__content">
                                 <table>
@@ -239,7 +239,7 @@
                             <div class="info__banner-subtitle">
                                 Australia, Sydney<br>
                                 begins in:
-                                <span>20 minutes</span>
+                                <span id="next-session-timer"> </span>
                             </div>
                             <button class="info__banner-btn btn btn--light btn--small">
                                 Have Part
@@ -251,94 +251,21 @@
 
             <section class="reason">
                 <div class="container">
-                    <div class="reason__header decor">
-                        <div class="reason__title title-2">
-                            Not sure if you need this?
-                        </div>
-                        <div class="reason__subtitle text-desc">
-                            Everyone who is looking for communication, friendship, feelings meets here
-                        </div>
-                    </div>
-                    <div class="reason__block">
-                        <div class="reason-card">
-                            <div class="reason-card__img col">
-                                <img src="{{ asset('build/images/img1.jpg') }}" alt="img1">
-                            </div>
-                            <div class="reason-card__text col">
-                                <div class="reason-card__title title-3">
-                                    What is dateassured.com?
-                                </div>
-                                <div class="reason-card__desc text">
-                                    <p>
-                                        Unlike online dating websites and apps dateassured.com guarantees You will have
-                                        a
-                                        video conversation with a real local
-                                        person tonight or on any other day.
-                                    </p>
-                                    <p>
-                                        Unlike online dating websites and apps dateassured.com guarantees You will have
-                                        a
-                                        video conversation with a real local
-                                        person tonight or on any other day.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reason-card">
-                            <div class="reason-card__img col">
-                                <img src="{{ asset('build/images/img2.jpg') }}" alt="img1">
-                            </div>
-                            <div class="reason-card__text col">
-                                <div class="reason-card__title title-3">
-                                    Advantages of dateasured.com?
-                                </div>
-                                <div class="reason-card__desc text">
-                                    <ul>
-                                        <li>All members are local;</li>
-                                        <li>No fake accounts - only real people;</li>
-                                        <li>Safe and secure environment;</li>
-                                        <li>Speed dating from a comfort of your home;</li>
-                                        <li>Video chat with as many people as you want;</li>
-                                        <li>No waiting lists, no frustrating nights</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reason-card">
-                            <div class="reason-card__img col">
-                                <img src="{{ asset('build/images/img3.jpg') }}" alt="img1">
-                            </div>
-                            <div class="reason-card__text col">
-                                <div class="reason-card__title title-3">
-                                    Why join dateassured.com?
-                                </div>
-                                <div class="reason-card__desc text">
-                                    <ul>
-                                        <li>Realistic membership costs, no hidden fees or charges;</li>
-                                        <li>Same day online sessions or book your preferred date and time;</li>
-                                        <li>Guaranteed online video conversations with real people on any day of the
-                                            week;
-                                        </li>
-                                        <li>Choose who you like most and continue your acquaintanceship on a real date;
-                                        </li>
-                                        <li>Convenience of both, app on your mobile device or a web version on your
-                                            laptop /
-                                            pc;</li>
-                                        <li>Secure online environment and 24hr online support</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <style>
+                        .reason a {
+                            color: #0f74a8;
+                        }
+                        .reason a:hover {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    {{ hp_text|raw }}
                 </div>
             </section>
 
             <section class="video">
                 <div class="container">
-                    <div class="video__block">
-                        <iframe src="https://player.vimeo.com/video/147339136" width="800" height="440" frameborder="0"
-                                allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                    </div>
+                    {{ hp_video|raw }}
                     <button class="video__btn btn btn--dark">
                         Register on the site right now!
                     </button>
@@ -552,5 +479,6 @@
     <script src="{{ asset('build/js/myajax.js') }}"></script>
     <script src="{{ asset('build/js/slick.min.js') }}"></script>
     <script src="{{ asset('build/js/script.js') }}"></script>
+    <script src="{{ asset('build/js/next_session_timer.js') }}"></script>
 
 {% endblock %}
